@@ -1,0 +1,20 @@
+<div id="specific-emotions">
+  <h3><%= @emotion.emotion%></h3>
+    <div id="feels-desc">
+      <p><%= @emotion.description %> </p>
+      <p>This is a large emotion, with many different meanings. Below are examples of words users have associated with this emotion before.</p>
+    </div>
+    <ul id="colors-list">
+      <% i = 0 %>
+      <% @palette.each do |hex|%>
+        <li id="curr-feels"style="background-color:<%= hex %>"><%= @feels[i] %></li>
+        <% i += 1 %>
+      <% end %>
+    </ul>
+    <div id="add-feels">
+      <% if current_user %>
+        <a href="/emotions/<%= @emotion.id %>/new">Associate a feeling</a> to this emotion / add it to your emotional profile!
+      <% else %>
+        <a href="/login">Login</a> or <a href="/new">Register</a> to begin your own emotional profile!
+      <% end %>
+</div>
