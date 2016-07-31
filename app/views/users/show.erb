@@ -1,0 +1,14 @@
+<h3><%= @user.username%></h3>
+
+<ul id="your-ee">
+  <% @user.emotional_experiences.each do |ee|%>
+    <li><a href="/emotions/<%= ee.emotion_id %>/"> <%= Emotion.find(ee.emotion_id).emotion %> </a></li>
+      <% if current_user %>
+        <ul id="your-ee-sub">
+          <% ee.feelings.each do |feel| %>
+            <li>| <%= feel.feeling %> |</li>
+          <% end %>
+        </ul>
+      <% end %>
+  <% end %>
+</ul>

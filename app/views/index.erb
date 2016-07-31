@@ -1,0 +1,12 @@
+<div id="major-emotions">
+<h3>Major Emotions:</h3>
+<ul id="feels-list">
+  <% @emotions.each do |emotion|%>
+  <li><a href="/emotions/<%= emotion.id%>/"><%= emotion.emotion%></a></li>
+  <% end %>
+</ul>
+</div>
+<div id="description-main">
+  <p>This is a site to facilitate emotional discussion. Use the above major emotions to find words to describe them, or add your own associated feelings based on the way you experience that emotion. There is no right and wrong, just our valid emotions.</p>
+  <p><img src="http://www.covenantalthoughts.com/wp-content/uploads/2014/05/Emotions-Wheel1.png"></p>
+</div>
